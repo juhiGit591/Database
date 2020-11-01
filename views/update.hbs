@@ -1,11 +1,28 @@
 <hr>
-<h3>Please input armed type :</h3>
 
-<form action= "/routing/search/by_armed_type" method = "post">
+<h2> Update Records !</h2>
+
+<form action= "/routing/update" method = "post">
     <p>
-
+    
+      <label>Id to update record on  </label><input value="" name="id_orig" />
+        <hr>
+        <label>Upsert ? Create a new record if id not found? </label><input type="checkbox" name="check" />
+        <br>
+         <label>New Id(Keep same if not required) </label><input value="" name="id_new" />
+        <br>
+        <label>Name:  </label><input value="" name="name" />
+        <br>
+        <label>date </label><input type="date" name="date" />
+        <br>
+        <label>Manner Of Death</label>
+                    <select name="manner_of_death">
+                    <option value = "shot">Shot</option>
+                    <option value = "shot and Tasered">Shot and Tasered</option>    
+                    </select>
+        <br>
         <label>Armed Type</label>
-                    <select name="armed_type"  multiple>
+                    <select name="armed_type">
          <option value = "BB gun">BB gun</option>
          <option value = "BB gun and vehicle">BB gun and vehicle</option>
          <option value = "Taser">Taser</option>
@@ -97,10 +114,79 @@
          <option value = "wrench">wrench</option>
          </select>
         <br>
-        <button type="submit">Search !</button>
+<label>Age </label><input value="" name="age" />
+        <br>
+        <label>Gender : </label>
+                    <select name="gender">
+                    <option value = "M">Male</option>
+                    <option value = "F">Female</option>    
+                    </select>
+        <br>
+        <label>Race :</label>
+                    <select name="race">
+                    <option value = "Asian">Asian</option>
+                    <option value = "Black">Black</option>  
+                    <option value = "Hispanic">Hispanic</option>
+                    <option value = "Native">Native</option> 
+                    <option value = "Other">Other</option>
+                    <option value = "White">White</option>   
+                    </select>
+        <br>
+        <label>City </label><input value="" name="city" />
+        <br>
+        <label>State </label><input value="" name="state" />
+        <br>
+        <label>Signs of mental illness : </label>
+                    <select name="signs_of_mental_illness">
+                    <option value = "True">True</option>
+                    <option value = "False">False</option>    
+                    </select>
+        <br>
+        <label>Threat Level</label>
+                    <select name="threat_level">
+                    <option value = "attack">Attack</option>
+                    <option value = "other">Other</option>
+                    <option value = "undetermined">Undetermined</option>    
+                    </select>
+        <br>
+        <label>Flee Status</label>
+                    <select name="flee">
+                    <option value = "Car">Car</option>
+                    <option value = "Foot">Foot</option>
+                    <option value = "Not fleeing">Not Fleeing</option> 
+                    <option value = "Other">Other</option>   
+                    </select>
+        <br>
+        <label>Body Camera : </label>
+                    <select name="body_camera">
+                    <option value = "True">True</option>
+                    <option value = "False">False</option>    
+                    </select>
+        <br>
+         <label>Arms Category</label>
+                    <select name="arms_category">
+<option value = "Blunt instruments"   >Blunt instruments</option>
+<option value = "Electrical devices">Electrical devices</option>
+<option value = "Explosives">Explosives</option>
+<option value = "Guns">Guns</option>
+<option value = "Hand tools">Hand tools</option>
+<option value = "Multiple">Multiple</option>
+<option value = "Other unusual objects">Other unusual objects</option>
+<option value = "Piercing objects">Piercing objects</option>
+<option value = "Sharp objects">Sharp objects</option>
+<option value = "Unarmed">Unarmed</option>
+<option value = "Unknown">Unknown</option>
+<option value = "Vehicles">Vehicles</option>
+                    </select>
+        <br>
+
+        <button type="submit">Update !</button>
 
 
 
     </p>
 </form>
 
+
+
+<hr>

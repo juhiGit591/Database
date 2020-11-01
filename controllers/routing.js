@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const { route } = require('./search');
 
 const router = express.Router();
 const projectModel =  mongoose.model("project");
 const searchController = require("./search");
+const updateController = require("./update");
 router.get("/",(req,res)=>{
 
     res.send("Router");
@@ -47,7 +49,7 @@ router.get("/list",async(req,res)=>{
  })});
 
 router.use("/search",searchController);
-
+router.use("/update",updateController);
 
 
 module.exports = router;

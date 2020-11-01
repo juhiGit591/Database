@@ -19,8 +19,7 @@ searcher.get("/by_id",(req,res)=>{
 searcher.post("/by_id",(req,res)=>{
 var id_ = req.body.id;
 
-
-  projectModel.find({ "id": id_ },(err, docs)=>{ 
+  projectModel.find({ "id": id_},(err, docs)=>{ 
         if(!err){
             res.render("list",{data :docs});
             console.log(docs);
@@ -41,6 +40,7 @@ searcher.get("/by_name",(req,res)=>{
 })
 
 searcher.post("/by_name",(req,res)=>{
+   
 var name_ = req.body.name;
 
 
@@ -65,7 +65,8 @@ searcher.get("/by_date",(req,res)=>{
 })
 
 searcher.post("/by_date",(req,res)=>{
-var date_ = req.body.date;
+
+    var date_ = req.body.date;
 
 
   projectModel.find({ "date": date_ },(err, docs)=>{ 
@@ -137,6 +138,7 @@ searcher.get("/by_age",(req,res)=>{
 })
 
 searcher.post("/by_age",(req,res)=>{
+   
 var age_ = req.body.age;
 
 
@@ -186,6 +188,7 @@ searcher.get("/by_race",(req,res)=>{
 })
 
 searcher.post("/by_race",(req,res)=>{
+    
 var race_ = req.body.race;
 
 
@@ -282,13 +285,14 @@ searcher.get("/by_threat_level",(req,res)=>{
 })
 
 searcher.post("/by_threat_level",(req,res)=>{
+
 var threat_level_ = req.body.threat_level;
 
 
   projectModel.find({ "threat_level": threat_level_ },(err, docs)=>{ 
         if(!err){
             res.render("list",{data :docs});
-            console.log(docs);
+           // console.log(docs);
          
         }
         else{
@@ -354,6 +358,7 @@ searcher.get("/by_arms_category",(req,res)=>{
 })
 
 searcher.post("/by_arms_category",(req,res)=>{
+
 var arms_category_ = req.body.arms_category;
 
 
@@ -371,5 +376,48 @@ var arms_category_ = req.body.arms_category;
 }
 );
 
+/*
+
+//Find by multiple filters
+searcher.get("/by_multiple_filters",(req,res)=>{
+
+    res.render("by_multiple_filters");
+})
+
+searcher.post("/by_mutiple_filters",(req,res)=>{
+var id_ = req.body.id;
+var name_ = req.body.name;
+var date_ = req.body.date;
+var manner_of_death_ = req.body.manner_of_death;
+var armed_type_ = req.body.armed_type;
+var age_ = req.body.age;
+var gender_ = req.body.gender;
+var race_ = req.body.race;
+var city_ = req.body.city;
+var state_ = req.body.state;
+var signs_of_mental_illness_ = req.body.signs_of_mental_illness;
+var threat_level_ = req.body.threat_level;
+var flee_ = req.body.flee;
+var body_camera_ = req.body.body_camera;
+var arms_category_ = req.body.arms_category;
+
+
+query = 
+
+
+  projectModel.find({ "id": id_,"name": name_, "arms_category": arms_category_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+*/
 
 module.exports = searcher;
