@@ -1,9 +1,15 @@
 <hr>
-<h3>Please input id :</h3>
+<h3>Please input threat level:</h3>
 
-<form action= "/routing/search/by_id" method = "post">
+<form action= "/routing/search/by_threat_level" method = "post">
     <p>
-        <label>Id </label><input value="" name="id" />
+
+        <label>Threat Level</label>
+                    <select name="threat_level">
+                    <option value = "attack">Attack</option>
+                    <option value = "other">Other</option>
+                    <option value = "undetermined">Undetermined</option>    
+                    </select>
         <br>
         <button type="submit">Search !</button>
 

@@ -130,5 +130,246 @@ var armed_type_ = req.body.armed_type;
 }
 );
 
+//Find by Age Factor
+searcher.get("/by_age",(req,res)=>{
+
+    res.render("by_age");
+})
+
+searcher.post("/by_age",(req,res)=>{
+var age_ = req.body.age;
+
+
+  projectModel.find({ "age": age_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by Gender
+searcher.get("/by_gender",(req,res)=>{
+
+    res.render("by_gender");
+})
+
+searcher.post("/by_gender",(req,res)=>{
+var gender_ = req.body.gender;
+
+
+  projectModel.find({ "gender": gender_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+
+//Find by Race
+searcher.get("/by_race",(req,res)=>{
+
+    res.render("by_race");
+})
+
+searcher.post("/by_race",(req,res)=>{
+var race_ = req.body.race;
+
+
+  projectModel.find({ "race": race_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by City
+searcher.get("/by_city",(req,res)=>{
+
+    res.render("by_city");
+})
+
+searcher.post("/by_city",(req,res)=>{
+var city_ = req.body.city;
+
+
+  projectModel.find({ "city": city_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by State
+searcher.get("/by_state",(req,res)=>{
+
+    res.render("by_state");
+})
+
+searcher.post("/by_state",(req,res)=>{
+var state_ = req.body.state;
+
+
+  projectModel.find({ "state": state_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by Signs of Mental Illness
+searcher.get("/by_signs_of_mental_illness",(req,res)=>{
+
+    res.render("by_signs_of_mental_illness");
+})
+
+searcher.post("/by_signs_of_mental_illness",(req,res)=>{
+var signs_of_mental_illness_ = req.body.signs_of_mental_illness;
+
+
+  projectModel.find({ "signs_of_mental_illness": signs_of_mental_illness_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by Signs of Threat Level
+searcher.get("/by_threat_level",(req,res)=>{
+
+    res.render("by_threat_level");
+})
+
+searcher.post("/by_threat_level",(req,res)=>{
+var threat_level_ = req.body.threat_level;
+
+
+  projectModel.find({ "threat_level": threat_level_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by Signs of Flee Status
+searcher.get("/by_flee_status",(req,res)=>{
+
+    res.render("by_flee_status");
+})
+
+searcher.post("/by_flee_status",(req,res)=>{
+var flee_ = req.body.flee;
+
+
+  projectModel.find({ "flee": flee_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by Body Camera
+searcher.get("/by_body_camera",(req,res)=>{
+
+    res.render("by_body_camera");
+})
+
+searcher.post("/by_body_camera",(req,res)=>{
+var body_camera_ = req.body.body_camera;
+
+
+  projectModel.find({ "body_camera": body_camera_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
+//Find by arms_category
+searcher.get("/by_arms_category",(req,res)=>{
+
+    res.render("by_arms_category");
+})
+
+searcher.post("/by_arms_category",(req,res)=>{
+var arms_category_ = req.body.arms_category;
+
+
+  projectModel.find({ "arms_category": arms_category_ },(err, docs)=>{ 
+        if(!err){
+            res.render("list",{data :docs});
+            console.log(docs);
+         
+        }
+        else{
+            res.send(err);
+        }
+     }
+    )
+}
+);
+
 
 module.exports = searcher;
