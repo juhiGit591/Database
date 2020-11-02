@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-//const { route } = require('./search');
-
 const router = express.Router();
 const projectModel =  mongoose.model("project");
 const searchController = require("./search");
@@ -11,6 +9,9 @@ const removeController = require("./remove");
 router.get("/",(req,res)=>{
 
     res.send("Router");
+ 
+    
+
 })
 
 router.get("/create",(req,res)=>{
@@ -71,7 +72,9 @@ project.arms_category = req.body.arms_category;
 
 });
 
-
+router.get("/pie",(req,res)=>{
+    res.render("pie");
+})
 
 router.get("/list",(req,res)=>{
   projectModel.find((err, docs)=>{ 

@@ -1,5 +1,4 @@
 const connection = require("./models");
-
 const express = require("express");
 const application  = express();
 const path = express("path");
@@ -12,7 +11,6 @@ application.use(bodyparser.urlencoded({
     extended: true
 }));
 
-//application.set('views', path.join(__dirname,"/views/"));
 
 application.engine("hbs",expressHandlebars({
     extname : "hbs", 
