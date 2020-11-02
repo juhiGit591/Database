@@ -195,7 +195,7 @@ var race_ = req.body.race;
   projectModel.find({ "race": race_ },(err, docs)=>{ 
         if(!err){
             res.render("list",{data :docs});
-            console.log(docs);
+            console.log(docs.length);
          
         }
         else{
@@ -376,7 +376,7 @@ var arms_category_ = req.body.arms_category;
 }
 );
 
-/*
+
 
 //Find by multiple filters
 searcher.get("/by_multiple_filters",(req,res)=>{
@@ -384,40 +384,70 @@ searcher.get("/by_multiple_filters",(req,res)=>{
     res.render("by_multiple_filters");
 })
 
-searcher.post("/by_mutiple_filters",(req,res)=>{
-var id_ = req.body.id;
-var name_ = req.body.name;
-var date_ = req.body.date;
-var manner_of_death_ = req.body.manner_of_death;
-var armed_type_ = req.body.armed_type;
-var age_ = req.body.age;
-var gender_ = req.body.gender;
-var race_ = req.body.race;
-var city_ = req.body.city;
-var state_ = req.body.state;
-var signs_of_mental_illness_ = req.body.signs_of_mental_illness;
-var threat_level_ = req.body.threat_level;
-var flee_ = req.body.flee;
-var body_camera_ = req.body.body_camera;
-var arms_category_ = req.body.arms_category;
+searcher.post("/by_multiple_filters",(req,res)=>{
 
 
-query = 
+    if(req.body.id == ''){
+        delete req.body.id;
+    }
+    if(req.body.name == ''){
+        delete req.body.name;
+    }
+    if(req.body.date == ''){
+        delete req.body.date;
+    }
+    if(req.body.manner_of_death == ''){
+        delete req.body.manner_of_death;
+    }
+    if(req.body.armed == ''){
+        delete req.body.armed;
+    }
+    if(req.body.age == ''){
+        delete req.body.age;
+    }
+    if(req.body.gender == ''){
+        delete req.body.gender;
+    }
+    if(req.body.race == ''){
+        delete req.body.race;
+    }
+    if(req.body.city == ''){
+        delete req.body.city;
+    }
+    if(req.body.state == ''){
+        delete req.body.state;
+    }
+    if(req.body.signs_of_mental_illness == ''){
+        delete req.body.signs_of_mental_illness;
+    }
+    if(req.body.threat_level == ''){
+        delete req.body.threat_level;
+    }
+    if(req.body.flee == ''){
+        delete req.body.flee;
+    }
+    if(req.body.body_camera == ''){
+        delete req.body.body_camera;
+    }
+    if(req.body.arms_category == ''){
+        delete req.body.arms_category;
+    }
 
 
-  projectModel.find({ "id": id_,"name": name_, "arms_category": arms_category_ },(err, docs)=>{ 
+console.log(req.body);
+  projectModel.find(req.body,(err, docs)=>{ 
         if(!err){
             res.render("list",{data :docs});
-            console.log(docs);
+           // console.log(docs);
          
         }
         else{
-            res.send(err);
+         res.send(err);
         }
      }
     )
+    
 }
 );
-*/
 
 module.exports = searcher;
