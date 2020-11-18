@@ -47,7 +47,31 @@ var projectSchema = new mongoose.Schema({
     arms_category:{
         type : String,
     }
-    
-});
 
+    
+    
+},
+{collection: 'projects'}
+
+);
+
+var pieSchema = new mongoose.Schema({
+    _id :{
+        type : String,
+        required : "Required"
+    },
+    count:{
+        type : Number,
+    }   
+    
+},
+{collection: 'projects'}
+
+);
+
+
+
+
+
+mongoose.model("pieSchema",pieSchema);
 mongoose.model("project",projectSchema);

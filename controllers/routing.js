@@ -5,6 +5,7 @@ const projectModel =  mongoose.model("project");
 const searchController = require("./search");
 const updateController = require("./update");
 const removeController = require("./remove");
+const pieController = require("./pie");
 
 router.get("/",(req,res)=>{
 
@@ -72,9 +73,7 @@ project.arms_category = req.body.arms_category;
 
 });
 
-router.get("/pie",(req,res)=>{
-    res.render("pie");
-})
+
 
 router.get("/list",(req,res)=>{
   projectModel.find((err, docs)=>{ 
@@ -90,6 +89,7 @@ router.get("/list",(req,res)=>{
 router.use("/search",searchController);
 router.use("/update",updateController);
 router.use("/remove",removeController);
+router.use("/pieanalysis",pieController);
 
 
 module.exports = router;
