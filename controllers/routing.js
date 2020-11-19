@@ -79,7 +79,6 @@ router.get("/list",(req,res)=>{
   projectModel.find((err, docs)=>{ 
     if(!err){
         res.render("list",{data :docs});
-        console.log(docs);
     }
     else{
         res.send(err);
