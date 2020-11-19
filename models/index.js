@@ -10,7 +10,7 @@ mongoose.connect(url,{
         console.log(err);
     }
     else{
-        console.log('Successful bitch!!');
+        console.log('Successfully started');
     }
 
  
